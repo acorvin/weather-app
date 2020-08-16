@@ -1,0 +1,44 @@
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+		<title>Mei Weather</title>
+	</head>
+	<body>
+		{% block content %}
+		<h1 class="text-xl font-semibold text-center"></h1>
+		<div class="container mx-auto px-4">
+			<form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="/" method="POST">
+				<div class="mb-4">
+					<label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+					</label>
+					<input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="city" name="city" type="text" placeholder="Enter a city">
+				</div>
+				<!-- <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" id-"submit" name="submit">
+					Submit
+				</button> -->
+			</form>
+		</div>
+			<div class="content-center text-center mx-auto px-8 pt-6 pb-8 mb-4">
+			<div class="rounded overflow-hidden shadow-lg">
+				<div class="px-6 py-4">
+					<div class="font-bold text-xl mb-2 text-center">Current Temperature</div>
+					
+					{% for key, value in data.items() %}
+						<ul>
+							{% if key == "city" %}
+							</li class="city"><h1 class="text-lg text-gray-800 text-center">{{value}}</h1></li>
+							{% elif key == "temp" %}
+							</li class="temp"><h2 class="text-xl font-bold text-center">{{value}}°C</h2></li>
+							{% else %}
+							</li>{{value}}</li>
+							{% endif %}
+						</ul>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+{% endblock %}
+</body>
