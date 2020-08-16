@@ -13,14 +13,12 @@ def index():
     else:
         city = 'denver'
 
-    api_key = '1a2a53786528a614d77ac2fe9d43dd7f'
+    api_key = ''
     url = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + api_key
 
     source = urlopen(url).read()
 
     list_of_data = json.loads(source)
-
-    pprint(list_of_data)
 
     data = {
         "city": str(list_of_data['name']),
@@ -29,12 +27,6 @@ def index():
     }
 
     return render_template('index.html', data=data)
-
-# data = res.json()
-
-# temp = data['main']['temp']
-
-# celcius = int(temp - 273.15)
 
 
 if __name__ == "__main__":
