@@ -26,9 +26,9 @@ cd weather-app
 ```
 pip install -r requirements.txt
 ```
-5. Add your add your Open Weather Data API key to the app.py file
+5. Add your add your Open Weather Data API key to line 18 in the the app.py file
 ```
-OPEN_WEATHER_MAP_API_KEY=your-api-key-here
+api_key = 'your-api-key'
 ```
 
 ## Usage
