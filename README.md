@@ -19,8 +19,17 @@ If you don't have a key, you can register for one here: https://openweathermap.o
 
 1. Clone this repository to your local machine.
 2. CD into the project directory
-3. Install any required dependencies
-4. Add your add your Open Weather Data API key
+```
+cd weather-app
+```
+4. Install any required dependencies
+```
+pip install -r requirements.txt
+```
+5. Add your add your Open Weather Data API key to the app.py file
+```
+OPEN_WEATHER_MAP_API_KEY=your-api-key-here
+```
 
 ## Usage
 To run the application, use the following command:
