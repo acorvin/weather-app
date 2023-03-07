@@ -1,20 +1,17 @@
-
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-		<title>Mei Weather</title>
-	</head>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+	<title>Mei Weather</title>
+</head>
 <body class="text-white">
 		{% block content %}
 			<div class="content-center text-center mx-auto px-8 pt-6 pb-8 mb-4">
 			<div class="rounded overflow-hidden shadow-lg bg-purple-500">
 				<div class="px-6 py-4">
 					<div class="font-bold text-xl mb-2 text-center">Today's Weather</div>
-
 					<!-- Date -->
 					<h3>{{d1}}</h3>
-
 					{% for key, value in data.items() %}
 						<ul>
 							{% if key == "city" %}
@@ -22,23 +19,19 @@
 								</li class="city"><h1 class="text-xl text-white text-center">{{value}}</h1></li>
 							</div>
 							{% endif %}
-
 							{% if key == "icon" %}
 							<div class="flex justify-center">
 								<img src="http://openweathermap.org/img/w/{{ value }}.png" alt="weather icon" height="100px" width="100px">
 							</div>
 							{% endif %}
-
 							{% if key == "high"%}
 							</li class="high"><h2 class="text-xl font-bold text-center">{{data['high']}}°F / {{data['low']}}°F</h2></li>
 							{% endif %}
-
 							{% if key == "description"%}
 							<div class="p-2">
 							</li>{{data.description}}</li>
 							</div>
 							{% endif %}
-
 							{% if key == "humidity"%}
 							<div class="p-4">
 							</li>💧 {{data.humidity}}%   🌬️ {{data.wind}}mph</li>
